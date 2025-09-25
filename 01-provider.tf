@@ -11,11 +11,14 @@ terraform {
   }
 
   backend "s3" {
-    bucket  = "rumotas-query-terraform"
+    bucket  = "rumo-state-bucket"
     key     = "rumotas-query/terraform.tfstate"
-    region  = "us-east-2"
+    region  = "us-east-1"
     encrypt = true
   }
 }
 
+output "suffix" {
+  value = local.suffix
 
+}
